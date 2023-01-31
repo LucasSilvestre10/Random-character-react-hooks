@@ -1,70 +1,65 @@
-# Getting Started with Create React App
+# Boas vindas ao exercício Random Character
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Você precisa dar manutenção em uma aplicação que gera um personagem aleatório vindo da api [The Rick and Morty API](https://rickandmortyapi.com/http:// "The Rick and Morty API"). Nessa aplicação você é responsável por refatorar essa aplicação para deixar o código mais limpo e legível. Use hooks customizados para isso! 
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Orientações
 
-### `npm start`
+<details>
+  <summary><strong>‼️ Antes de começar a desenvolver</strong></summary><br />
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Crie um fork desse projeto, para isso siga esse [tutorial de como realizar um fork](https://guides.github.com/activities/forking/).
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Após fazer o fork, clone o repositório criado para o seu computador.
 
-### `npm test`
+- Rode o comando `npm install`.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Vá para a branch `main` do seu projeto e execute o comando `git branch` ou `git branch -a`.
 
-### `npm run build`
+> 💡 Observe o que deve ser feito nas instruções para cada exercício.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+</details>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<br />
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<details>
+  <summary><strong>👨‍💻 O que deverá ser desenvolvido</strong></summary><br />
+Nesse repositório, você encontra uma aplicação React funcionando que gera um personagem aleatório de `Rick and Morty` de forma muito simplificada.
 
-### `npm run eject`
+O objetivo desse exercício é que você faça a refatoração dessa aplicação, para isso você precisará criar hooks customizáveis para refatorar o código já implementado, deixando-o mais limpo e organizado.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+</details>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<br />
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Exercícios
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+A lógica que você vai usar já está implementada no arquivo `src/App.js`, você deverá se basear nesse código para criar os hooks customizados
 
-## Learn More
+### 1. Para consumir nossa API vamos utilizar o hook customizado `useFetch`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<details>
+<summary>Siga os passos para criar o Hook Customizado:</summary><br />
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+> Dica: Lembre-se de olhar a lógica que já está implementada no arquivo `src/App.js` para criar o hook customizado
 
-### Code Splitting
+1. Crie dentro da pasta hooks um arquivo `useFetch.js`. Vamos precisar dos hooks `useEffect` e `useState` para fazer a chamada a API e salvar o seu retorno.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+2. O Hook deverá receber como parâmetro a url para onde iremos fazer a requisição.
 
-### Analyzing the Bundle Size
+3. Crie três estados:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+   - um estado de carregando, para aguardar enquanto a requisição está sendo feita
+   - um estado para salvar o retorno da API
+   - e outro estado para caso haja algum error na requisição
 
-### Making a Progressive Web App
+4. Crie uma função para fazer o `fetch` da url recebida como parâmetro, utilize o `useEffect` para chamar essa função e faça o tratamento de erro.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+5. Retorne um objeto contento os três estados criados e a função que chama o `fetch()`.
 
-### Advanced Configuration
+Pronto o seu Hook Customizado está feito, agora utilize ele no `App.js` para gerar o personagem aleatório sempre que a pagina iniciar e clicar no botão `Novo Personagem`!.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+> Atenção: lembre-se de refatorar o código implementado em `App.js` para que sua aplicação continue funcionando corretamente.
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+</details>

@@ -19,7 +19,7 @@ function App() {
               </div>)}
 
         </section>
-        <button onClick={ getNewCharacter }>Vamos La</button>
+        <button onClick={ getNewCharacter }>Novo Personagem!</button>
       </main>
     </body>
   );
